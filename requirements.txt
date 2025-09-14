@@ -1,0 +1,7 @@
+streamlit
+pypdf
+python-docx
+matplotlib
+wordcloud
+seaborn
+nltk
