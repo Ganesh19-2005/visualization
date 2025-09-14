@@ -78,24 +78,6 @@ if uploaded_file:
             st.pyplot(plt)
             plt.clf()
 
-            # 4. Heatmap: frequency of top 5 words across sentences
-            sentences = sent_tokenize(text)
-            top_words = [w for w, _ in word_freq.most_common(5)]
-
-            # Count occurrences of top words in each sentence
-            heatmap_data = []
-            for sent in sentences:
-                sent_words = sent.split()
-                counts = [sent_words.count(word) for word in top_words]
-                heatmap_data.append(counts)
-
-            heatmap_array = np.array(heatmap_data)
-            plt.figure(figsize=(10,6))
-            sns.heatmap(heatmap_array, yticklabels=False, xticklabels=top_words, cmap='YlGnBu', cbar_kws={'label': 'Count'})
-            plt.xlabel("Top Words")
-            plt.title("Heatmap of Top 5 Word Frequencies Across Sentences")
-            st.pyplot(plt)
-            plt.clf()
 
         else:
             st.info("No words found to visualize.")
